@@ -27,7 +27,7 @@ def echo_message(message):
  #print(msg)
  response = rsp(msg)
  #print(response)
- bot.reply_message(message.chat.id, response)
+ bot.reply_to(message.chat.id, response)
     
  
 print('bot start running')
