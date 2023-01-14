@@ -17,11 +17,11 @@ def rsp(question):
         presence_penalty=0.0
     )
     return response.choices[0].text
-@bot.message_handler(commands=['start', 'help', 'about'])
+@bot.message_handler(commands=['start'])
 def send_welcome(message):
  bot.send_message(message.chat.id, 'use /ask followed by a question or statement to generate a response')
  
-@bot.message_handler(func=lambda message: True) 
+@bot.message_handler(commands=['chat', 'ai', 'ask']) 
 def echo_message(message):
  msg = message.text
  #print(msg)
