@@ -19,7 +19,7 @@ def rsp(question):
     return response.choices[0].text
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
- bot.send_message(message.chat.id, 'use /ask followed by a question or statement to generate a response')
+ bot.send_message(message.chat.id, 'use /chat followed by a question or statement to generate a response')
  
 @bot.message_handler(commands=['chat', 'ai', 'ask']) 
 def echo_message(message):
@@ -27,7 +27,7 @@ def echo_message(message):
  #print(msg)
  response = rsp(msg)
  #print(response)
- bot.send_message(message.chat.id, response)
+ bot.reply_message(message.chat.id, response)
     
  
 print('bot start running')
